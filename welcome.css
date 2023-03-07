@@ -7,8 +7,9 @@
 }
 body{
     background:url("images/bg.jpg");
-    background-size: 100%;
+    background-size: cover;
     background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 body > *{
     font-family: 'Helvetica', sans-serif;
@@ -22,6 +23,7 @@ nav{
 }
 nav * {
     padding: 1.5rem;
+    white-space: nowrap
 }
 
 .logout{
@@ -68,6 +70,7 @@ nav * {
     padding: 1rem;
     background-color: rgba(0, 0, 0, 0.9);
     width: 90%;
+    min-width: fit-content;
 }
 
 .cars-container > .active{
