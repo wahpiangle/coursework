@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background:url("images/bg.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
+}
+body > *{
+    font-family: 'Helvetica', sans-serif;
+}
+
+nav{
+    background-color: rgba(0, 0, 0);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+nav * {
+    padding: 1.5rem;
+}
+
+.logout{
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.logout:hover{
+    background-color: rgb(51, 51, 51);
+}
+.title-container{
+    display: flex;
+    color: white;
+    justify-content: center;
+    gap: 10rem;
+    margin-bottom: 1rem;
+}
+
+.luxury-title, .sports-title, .classic-title{
+    padding: 2rem;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+.luxury-title:hover, .sports-title:hover, .classic-title:hover{
+    border-bottom: 2px solid;
+    transition: 0.2s;
+}
+
+.title-container > .active{
+    border-bottom: 2px solid;
+}
+
+.car > img{
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.cars-container{
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 90%;
+}
+
+.cars-container > .active{
+    display: grid;
+}
+
+.luxury-container, .sports-container, .classic-container{
+    grid-template-columns: repeat(3,1fr);
+    display: none;
+}
+
+.car{
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.car-title{
+    color: white;
+}
+
+ul{
+    padding: 0 3rem;
+    display: flex;
+    list-style: none;
+}
+
+ul > li{
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+ul > li:hover{
+    transform: translateY(-4px);
+    border-bottom: 2px solid;
+    transition: 0.2s;
+}
+
+ul > li.active{
+    transform: translateY(-4px);
+    border-bottom: 2px solid;
+}
+
+.car:hover{
+    background-color: rgba(0, 0, 0, 0.9);
+}
