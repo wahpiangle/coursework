@@ -5,117 +5,319 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background:url("images/bg.jpg");
+
+body {
+    background: url("images/bg.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
-body > *{
+
+body>* {
     font-family: 'Helvetica', sans-serif;
 }
 
-nav{
+nav {
     background-color: rgba(0, 0, 0);
     color: white;
     display: flex;
     align-items: center;
 }
+
 nav * {
     padding: 1.5rem;
     white-space: nowrap
 }
 
-.logout{
+.logout {
     margin-left: auto;
     cursor: pointer;
 }
 
-.logout:hover{
+.logout:hover {
     background-color: rgb(51, 51, 51);
 }
-.title-container{
+
+.title-container {
     display: flex;
     color: white;
     justify-content: center;
     gap: 10rem;
-    margin-bottom: 1rem;
 }
 
-.luxury-title, .sports-title, .classic-title{
-    padding: 2rem;
+.luxury-title,
+.sports-title,
+.classic-title {
+    padding: 1rem;
     border-bottom: 2px solid transparent;
     cursor: pointer;
 }
 
-.luxury-title:hover, .sports-title:hover, .classic-title:hover{
+.luxury-title:hover,
+.sports-title:hover,
+.classic-title:hover {
     border-bottom: 2px solid;
     transition: 0.2s;
 }
 
-.title-container > .active{
+.title-container>.active {
     border-bottom: 2px solid;
 }
 
-.car > img{
+.car>img {
     width: 250px;
     height: 180px;
     object-fit: cover;
 }
 
-.cars-container{
-    margin-top: 2rem;
-    margin-left: auto;
-    margin-right: auto;
+.cars-container,
+.update-container,
+.cancel-container {
+    padding: 1rem;
+    margin: 2rem auto;
     background-color: rgba(0, 0, 0, 0.9);
     width: 75%;
-    min-width:min-content;
+    min-width: min-content;
 }
 
-.cars-container > .active{
-    display: grid;
-}
-
-.luxury-container, .sports-container, .classic-container{
-    grid-template-columns: repeat(3,1fr);
+.update-container,
+.cancel-container {
     display: none;
 }
 
-.car{
+.cars-container>.active {
+    display: grid;
+}
+
+.luxury-container,
+.sports-container,
+.classic-container {
+    grid-template-columns: repeat(3, 1fr);
+    display: none;
+}
+
+.car {
     padding: 1rem;
     text-align: center;
     cursor: pointer;
     margin: .5rem;
 }
 
-.car-title{
+.car-title {
     color: white;
 }
 
-ul{
+ul {
     padding: 0 3rem;
     display: flex;
     list-style: none;
 }
 
-ul > li{
+ul>li {
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
     margin-left: 1rem;
 }
 
-ul > li:hover{
+ul>li:hover {
     transform: translateY(-4px);
     border-bottom: 2px solid;
     transition: 0.2s;
 }
 
-ul > li.active{
+ul>li.active {
     transform: translateY(-4px);
     border-bottom: 2px solid;
 }
 
-.car:hover{
+.car:hover {
     background-color: rgba(0, 0, 0, 0.9);
+}
+
+.update-container-title,
+.cancel-container-title {
+    text-align: center;
+    color: white;
+    padding: 1rem;
+    font-weight: 600;
+}
+
+/* change reservation form */
+.update-box {
+    width: 400px;
+    padding: 4rem;
+    margin: 2rem auto;
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.update-box .input-box, .input-box-date {
+    position: relative;
+}
+
+.update-box .input-box input, .input-box-date input {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    background: transparent;
+}
+
+.update-box .input-box label {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    padding: 1rem 0;
+    font-size: 16px;
+    color: #000000;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.update-box .input-box-date label {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    padding: 1rem 0;
+    font-size: 12px;
+    color: #000000;
+    pointer-events: none;
+}
+
+.update-box .input-box input:focus~label,
+.update-box .input-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #000000;
+    font-size: 10px;
+}
+
+.update-box form #submit-button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.2s;
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-radius: 5px;
+}
+
+#submit-button input {
+    margin: 0;
+    border: 0;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    background-color: transparent;
+    font-weight: bold;
+    color: #000000;
+    letter-spacing: 3px;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.update-box #submit-button:hover {
+    background: #000000;
+    border-radius: 5px;
+}
+
+.update-box #submit-button:hover input {
+    color: #e0e0e0;
+}
+
+.update-box span {
+    position: absolute;
+    display: block;
+}
+
+.update-box #submit-button span:nth-child(2) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #000000);
+    animation: btn-anim1 1.5s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.update-box #submit-button span:nth-child(3) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #000000);
+    animation: btn-anim2 1.5s linear infinite;
+    animation-delay: 0.375s;
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.update-box #submit-button span:nth-child(4) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #000000);
+    animation: btn-anim3 1.5s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+.update-box #submit-button span:nth-child(5) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #000000);
+    animation: btn-anim4 1.5s linear infinite;
+    animation-delay: 1.125s;
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
 }

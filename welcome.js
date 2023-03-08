@@ -7,6 +7,9 @@ const classicTitle = document.querySelector('.classic-title');
 const luxuryContainer = document.querySelector('.luxury-container');
 const sportsContainer = document.querySelector('.sports-container');
 const classicContainer = document.querySelector('.classic-container');
+const carsContainer = document.querySelector('.cars-container');
+const updateContainer = document.querySelector('.update-container');
+const cancelContainer = document.querySelector('.cancel-container');
 
 function logout(){
     window.location.href = "index.php";
@@ -16,18 +19,27 @@ navCars.addEventListener('click', function(){
     navCars.classList.add('active');
     navUpdate.classList.remove('active');
     navCancel.classList.remove('active');
+    carsContainer.style.display = 'grid';
+    updateContainer.style.display = 'none';
+    cancelContainer.style.display = 'none';
 });
 
 navUpdate.addEventListener('click', function(){
     navUpdate.classList.add('active');
     navCars.classList.remove('active');
     navCancel.classList.remove('active');
+    updateContainer.style.display = 'block';
+    carsContainer.style.display = 'none';
+    cancelContainer.style.display = 'none';
 });
 
 navCancel.addEventListener('click', function(){
     navCancel.classList.add('active');
     navCars.classList.remove('active');
     navUpdate.classList.remove('active');
+    cancelContainer.style.display = 'block';
+    carsContainer.style.display = 'none';
+    updateContainer.style.display = 'none';
 });
 
 luxuryTitle.addEventListener('click', function(){
