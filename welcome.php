@@ -28,7 +28,7 @@
                 <h2 class="sports-title">Sports</h2>
                 <h2 class="classic-title">Classic</h2>
             </div>
-            <div class="luxury-container active">
+            <div class="luxury-container">
                 <div class="car">
                     <img src="images/rollsroyce-blue.jpg">
                     <div class="car-title">Rolls Royce Phantom (Blue) <br><span>RM 9800/day</span></div>
